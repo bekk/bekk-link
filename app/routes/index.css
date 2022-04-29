@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "DIN", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'NewZald';
+}
+
+.root {
+  background: #0E0E0E;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  margin: 0 auto;
+  max-width: 960px;
+  text-align: center;
+}
+
+.hero {
+  font-size: 8rem;
+  font-weight: 800;
+  margin-bottom: 0;
+}
+.description {
+  font-size: 1.5em;
+  margin-top: 0;
+  margin-bottom: 3em;
+}
+.heading {
+  font-size: 2rem;
+  margin-top: 1em;
+  margin-bottom: 0.3em;
+}
+.form-group {
+  display: block;
+  text-align: left;
+  margin-bottom: 1em;
+}
+.form-group > label {
+  font-weight: bold;
+  display: block;
+  font-size: 1.2em;
+}
+.form-group input {
+  padding: 0.5em 1em;
+  font-size: 1.5em;
+  border-bottom: 2px solid currentColor;
+  width: 100%;
+  color: #0e0e0e;
+}
+.form-group .error {  
+  color: red;
+  font-size: 1em;
+}
+.button {
+  margin-top: 1em;
+  padding: 0.5em 1em;
+  border: 0;
+  appearance: none;
+  background-color: #FF5B5B;
+  color: #0e0e0e;
+  border-radius: 0;
+  font-size: 1.5rem;
+  transition: all .1s ease-out;
+  font-family: inherit;
+}
+.button:focus, .button:hover {
+  background-color: #FF9999;
+  transform: scale(1.03);
+}

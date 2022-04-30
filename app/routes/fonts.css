@@ -25,11 +25,11 @@
 @font-face {
   font-family: 'NewZald';
   src: url('/fonts/newzald.woff2') format('woff2');
-  font-display: "swap";
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'DIN';
   src: url('/fonts/din.woff2') format('woff2');
-  font-display: "swap";
+  font-display: swap;
 }

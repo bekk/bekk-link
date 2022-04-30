@@ -56,37 +56,46 @@ export default function LandingPage() {
     <div className="root">
       <main className="container">
         <h1 className="hero">Bekk.link</h1>
-        <p className="description">
+        <p className="text">
           Bekk.link er Bekk sin egen lenkeforkorter.
         </p>
-        <h2 className="heading">Registrer ny lenke</h2>
-        <Form method="post">
-          <div className="form-group">
-            <label htmlFor="originalUrl">Original URL</label>
-            <input
-              type="url"
-              id="originalUrl"
-              name="originalUrl"
-              required
-              placeholder="https://bekk.no"
-            />
+        {actionData?.success ? (
+          <div className="success-message">
+            <h2 className="heading">Lenke registrert!</h2>
+            <p className="text">
+              Du kan nå gå til <a href={`/${actionData.slug}`}>bekk.link/{actionData.slug}</a> og bli videresendt, eller <a href="/">lage en til</a>.
+            </p>
           </div>
-          <div className="form-group">
-            <label htmlFor="slug">Forkortes til bekk.link/…?</label>
-            <input
-              id="slug"
-              name="slug"
-              required
-              aria-invalid={actionData?.error === "Slug finnes allerede"}
-            />
-            {actionData?.error && (
-              <div className="error">{actionData.error}</div>
-            )}
-          </div>
-          <button className="button" type="submit">
-            {actionData?.success ? "Suksess!" : "Registrer"}
-          </button>
-        </Form>
+        ) : (
+          <Form method="post">
+            <h2 className="heading">Registrer ny lenke</h2>
+            <div className="form-group">
+              <label htmlFor="originalUrl">Original URL</label>
+              <input
+                type="url"
+                id="originalUrl"
+                name="originalUrl"
+                required
+                placeholder="https://bekk.no"
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="slug">Forkortes til bekk.link/…?</label>
+              <input
+                id="slug"
+                name="slug"
+                required
+                aria-invalid={actionData?.error === "Slug finnes allerede"}
+              />
+              {actionData?.error && (
+                <div className="error">{actionData.error}</div>
+              )}
+            </div>
+            <button className="button" type="submit">
+              {actionData?.success ? "Suksess!" : "Registrer"}
+            </button>
+          </Form>
+        )}
       </main>
     </div>
   );

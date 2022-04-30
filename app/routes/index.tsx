@@ -1,5 +1,5 @@
 import { Form, useActionData } from "@remix-run/react";
-import type { ActionFunction, LinksFunction } from "@remix-run/server-runtime";
+import type { ActionFunction, LinksFunction, MetaFunction } from "@remix-run/server-runtime";
 import { json } from "@remix-run/server-runtime";
 import { prisma } from "~/db.server";
 import fontsCss from "./fonts.css";
@@ -11,6 +11,16 @@ export const links: LinksFunction = () => {
     { rel: "stylesheet", href: css },
   ];
 };
+
+export const meta: MetaFunction = () => {
+  return {
+    title: "Bekk Link",
+    "og:title": "Bekk Link",
+    description: "Bekk Link er Bekk sin lenkeforkorter",
+    "og:description": "Bekk Link er Bekk sin lenkeforkorter",
+    "og:type": "website",
+  }
+}
 
 export const action: ActionFunction = async ({ request }) => {
   const formData = await request.formData();

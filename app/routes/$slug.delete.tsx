@@ -15,7 +15,7 @@ export const loader: LoaderFunction = async ({ params }) => {
     throw new Response("Link not found", { status: 404 });
   }
 
-  prisma.link.delete({
+  await prisma.link.delete({
     where: { id: match.id },
   });
 
